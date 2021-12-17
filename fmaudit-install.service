@@ -1,0 +1,11 @@
+[Unit]
+Description=Install FMAudit
+After=multi-user.target
+
+[Service]
+Type=simple
+ExecStart=/fmaudit-install.sh
+
+[Install]
+WantedBy=multi-user.target
+# Created symlink /etc/systemd/system/multi-user.target.wants/fmaudit-install.service → /etc/systemd/system/fmaudit-install.service.
