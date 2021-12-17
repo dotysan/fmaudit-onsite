@@ -18,7 +18,6 @@ RUN dnf --assumeyes --setopt=install_weak_deps=False update \
     dnf clean all \
     && \
     find /var/cache/dnf -mindepth 1 -delete
-#RUN dnf --quiet --assumeyes install iproute iputils net-tools psmisc mc
 
 # schleping it temporarily into the root for now
 COPY fmaudit.onsite.jar .
@@ -29,9 +28,6 @@ RUN chmod -x /etc/systemd/system/fmaudit-install.service
 RUN systemctl enable fmaudit-install
 
 EXPOSE 33330/tcp
-
-# tcpdump -nieth0 -w tcpdump.`date -Im`.pcap
-# ngrep -I tcpdump.`date -Im`.pcap -t -Wbyline |less
 
 # enable systemd
 CMD [ "/sbin/init" ]
