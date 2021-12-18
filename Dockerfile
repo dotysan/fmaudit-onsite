@@ -13,7 +13,6 @@ RUN dnf --assumeyes --setopt=install_weak_deps=False update \
     dnf --assumeyes --setopt=install_weak_deps=False install \
         systemd \
         java-1.8.0-openjdk-headless \
-        less tcpdump ngrep \
     && \
     dnf clean all \
     && \
